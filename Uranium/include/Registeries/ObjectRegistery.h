@@ -29,7 +29,7 @@ namespace Uranium
 			* @return void
 			*/
 			template <typename objectType>
-			void registerDynamicObject(objectType object, std::string& name = "")
+			void registerDynamicObject(objectType* object, std::string& name = "")
 			{
 				// Make sure that the object is a child of the registery type.
 				static_assert(std::is_base_of<RegisteryType, objectType>::value, "The object you are trying to register is not a child of the registery type."); 
@@ -59,7 +59,7 @@ namespace Uranium
 				{
 					name = TYPEOF(objectType);
 				}
-				m_localRegistery[name] = objectType();
+				m_localRegistery[name] = new objectType();
 			}
 		private:
 		};
