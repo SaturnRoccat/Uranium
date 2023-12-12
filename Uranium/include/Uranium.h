@@ -1,4 +1,7 @@
 #pragma once
+#include "Registeries/ObjectRegistery.h"
+#include "Object/CompilerObject.h"
+#include "UraniumGlobals.h"
 
 namespace Uranium {
 	/**
@@ -7,7 +10,12 @@ namespace Uranium {
 	*/
 	class UraniumDK {
 	private:
+	private:
 	public:
-
-	};
+		Creation::ObjectRegistery<Creation::BaseObject> BlockRegistery;
+	public:
+		UraniumDK(const std::string& addonPrefix = "UraniumGenerated") {
+			Uranium::GlobalProjectNamespace = addonPrefix;
+		}
+	}; 
 } // namespace Uranium

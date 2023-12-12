@@ -19,15 +19,27 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\Object\BlockObject.h" />
+    <ClInclude Include="include\Object\CompilerObject.h" />
     <ClInclude Include="include\Logger\Logger.h" />
+    <ClInclude Include="include\Object\ObjectComponents\ObjectComponents.h" />
+    <ClInclude Include="include\SimdJson\simdjson.h" />
     <ClInclude Include="include\Uranium.h" />
     <ClInclude Include="include\Registeries\ObjectRegistery.h" />
+    <ClInclude Include="include\UraniumGlobals.h" />
     <ClInclude Include="include\Utils\macros.h" />
+    <ClInclude Include="include\Utils\RandomTypes.h" />
+    <ClInclude Include="include\Utils\UtilFunctions.h" />
+    <ClInclude Include="include\UUID_V4\endianness.h" />
+    <ClInclude Include="include\UUID_V4\UUID_V4.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="include\SimdJson\simdjson.cpp" />
+    <ClCompile Include="src\Object\CompilerObject.cpp" />
     <ClCompile Include="src\Logger\Logger.cpp" />
     <ClCompile Include="src\Registeries\ObjectRegistery.cpp" />
     <ClCompile Include="src\Uranium.cpp" />
+    <ClCompile Include="src\Utils\UtilFunctions.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
@@ -124,6 +136,7 @@
       <LanguageStandard>stdcpp20</LanguageStandard>
       <AdditionalIncludeDirectories>$(ProjectDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>/D _CRT_SECURE_NO_WARNINGS %(AdditionalOptions)</AdditionalOptions>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -141,6 +154,7 @@
       <LanguageStandard>stdcpp20</LanguageStandard>
       <AdditionalIncludeDirectories>$(ProjectDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>/D _CRT_SECURE_NO_WARNINGS %(AdditionalOptions)</AdditionalOptions>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
