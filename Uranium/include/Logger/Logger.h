@@ -111,7 +111,7 @@ namespace Uranium
 				m_logFile.open(path, std::ios::out | std::ios::trunc);
 			}
 
-			static void inline LogRaw(LogLevel level, const std::string& message)
+			static void LogRaw(LogLevel level, const std::string& message)
 			{
 				// Flush the buffer if needed
 				conditionalFlush();
@@ -250,7 +250,7 @@ namespace Uranium
 
 			static int pushCount;
 		private:
-			static void inline conditionalFlush() {
+			static void  conditionalFlush() {
 				if (pushCount == 0)
 					return; // Just return if we have not pushed anything to the buffer yet.
 				if (pushCount % FLUSH_CONSTANT == 0)
