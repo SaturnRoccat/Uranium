@@ -69,7 +69,7 @@
     <ClInclude Include="include\UUID_V4\UUID_V4.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="include\SimdJson\simdjson.cpp" />
+
     <ClCompile Include="src\Object\CompilerObject.cpp" />
     <ClCompile Include="src\Logger\Logger.cpp" />
     <ClCompile Include="src\Registeries\ObjectRegistery.cpp" />
