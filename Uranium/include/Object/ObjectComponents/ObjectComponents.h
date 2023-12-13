@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include <Utils/RapidProxy.h>
 
 namespace Uranium
 {
