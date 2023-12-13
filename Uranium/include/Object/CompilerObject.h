@@ -4,13 +4,19 @@
 #include <vector>
 #include "../Utils/RandomTypes.h"
 #include "UraniumGlobals.h"
-// #include <rapidjson/document.h>
-#include <Registeries/ObjectRegistery.h>
-
+#include "Registeries/ObjectRegistery.h"
+#include "../Utils/RapidProxy.h"
 namespace Uranium
 {
 	namespace Creation
 	{
+		/**
+		* BaseObject is the base class for all objects in Uranium.
+		* This class represents a single object in Uranium
+		* @tparam RegisteryType The type of the registery that this object will use
+		* @param objectName The name of the object
+		* This class is abstract and should not be instanced directly unless you are making a child class.
+		*/
 		template <typename RegisteryType>
 		class BaseObject
 		{
@@ -18,14 +24,24 @@ namespace Uranium
 			std::string objectName;
 			FormatVersion formatVersion = GlobalFormatVersion; 
 			Uranium::Creation::ObjectRegistery<RegisteryType*> objectRegistery; 
-			//rapidjson::Document jsonRepresentation;
+			rapidjson::Document jsonRepresentation;
 			const std::string folderName; // This is the folder that the object gets saved in on serialization
 		public:
 			BaseObject(const char* name) {
 				objectName = name;
 			}
 			void addComponent(ObjectComponent* component) {
+				objectRegistery.registerDynamicObject(component, component->componentName);
 			} 
+
+			template <typename ComponentType>
+			void addComponent(const char* name = "")
+			{
+				objectRegistery.registerStaticObject<ComponentType>(name);
+			}
+
+			virtual rapidjson::Document GetAsJson() = 0;
+
 		};
 	} // namespace Creation
 } // namespace Uranium

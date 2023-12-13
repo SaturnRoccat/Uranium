@@ -18,7 +18,7 @@ namespace Uranium
 		{
 		private:
 			// A place to register objects before compilation.
-			std::unordered_map<std::string, RegisteryType*> m_localRegistery;
+			std::unordered_map<std::string, RegisteryType> m_localRegistery;
 		public:
 
 			/**
