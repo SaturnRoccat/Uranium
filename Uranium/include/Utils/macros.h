@@ -69,7 +69,7 @@
 * * @param x The token to get the name and type of.
 * * @return The name and type of the token.
 */
-#define TOKEN_NICE_NAME(x) TOKENAME(x) + " (" + TYPEOF(x) + ")"
+#define TOKEN_NICE_NAME(x) std::string(TOKENAME(x)) + " (" + TYPEOF(x) + ")"
 
 /**
 * @brief This macro is used to check if a child is a child of a parent at compile time will static_assert if it is not.

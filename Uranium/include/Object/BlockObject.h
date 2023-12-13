@@ -7,10 +7,10 @@ namespace Uranium
 {
 	namespace Creation
 	{
-		class BlockObject : public BaseObject
+		class BlockObject : public BaseObject<BlockObject>
 		{
 		public:
-
+			BlockObject(const char* name) : BaseObject(name) {}
         };
 	}
 }
