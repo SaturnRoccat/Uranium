@@ -162,6 +162,9 @@
     <ClInclude Include="include\Utils\RapidProxy.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\Object\ObjectComponents\BlockComponents\BlockComponent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Uranium.cpp">
@@ -177,6 +180,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\Utils\UtilFunctions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Object\BlockObject.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

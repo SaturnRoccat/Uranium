@@ -22,6 +22,7 @@
     <ClInclude Include="include\Object\BlockObject.h" />
     <ClInclude Include="include\Object\CompilerObject.h" />
     <ClInclude Include="include\Logger\Logger.h" />
+    <ClInclude Include="include\Object\ObjectComponents\BlockComponents\BlockComponent.h" />
     <ClInclude Include="include\Object\ObjectComponents\ObjectComponents.h" />
     <ClInclude Include="include\rapidjson\allocators.h" />
     <ClInclude Include="include\rapidjson\document.h" />
@@ -70,6 +71,7 @@
     <ClInclude Include="include\UUID_V4\UUID_V4.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Object\BlockObject.cpp" />
     <ClCompile Include="src\Object\CompilerObject.cpp" />
     <ClCompile Include="src\Logger\Logger.cpp" />
     <ClCompile Include="src\Registeries\ObjectRegistery.cpp" />
