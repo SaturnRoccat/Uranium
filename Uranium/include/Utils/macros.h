@@ -1,6 +1,8 @@
 #pragma once
 #include <typeinfo>
 #include <string>
+#include <assert.h>
+#include <type_traits>
 
 #ifndef DEMANGLE_NAME_BUFFER_SIZE 
 	#define DEMANGLE_NAME_BUFFER_SIZE 1024
@@ -68,3 +70,13 @@
 * * @return The name and type of the token.
 */
 #define TOKEN_NICE_NAME(x) TOKENAME(x) + " (" + TYPEOF(x) + ")"
+
+/**
+* @brief This macro is used to check if a child is a child of a parent at compile time will static_assert if it is not.
+* *
+* * @param child The child to check.
+* * @param parent The parent to check.
+* * @return void
+* *
+*/
+#define IS_CHILD_OF(child, parent) static_assert(std::is_base_of<parent, child>::value, "The Child of Type " + #child + " is not a child of the Parent of Type " + #parent + ".");
