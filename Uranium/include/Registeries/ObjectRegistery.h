@@ -61,6 +61,39 @@ namespace Uranium
 				}
 				m_localRegistery[name] = new objectType();
 			}
+
+			/**
+			* This function allows you to get an object from the registery.
+			* @param name The name of the object to get.
+			* @return The object that was requested.
+			* 
+			*/
+			RegisteryType* getObject(const std::string& name)
+			{
+				// Make sure that the object exists.
+				assert(m_localRegistery.find(name) != m_localRegistery.end());
+
+				return m_localRegistery[name];
+			}
+
+			// Support for the [] operator.
+			RegisteryType* operator[](const std::string& name)
+			{
+				return getObject(name);
+			}
+
+			// Itterator support.
+			typename std::unordered_map<std::string, RegisteryType*>::iterator begin()
+			{
+				return m_localRegistery.begin();
+			}
+
+			// Itterator support.
+			typename std::unordered_map<std::string, RegisteryType*>::iterator end()
+			{
+				return m_localRegistery.end();
+			}
+
 		private:
 		};
 	} // namespace Creation

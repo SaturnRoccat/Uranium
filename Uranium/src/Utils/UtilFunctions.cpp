@@ -14,7 +14,7 @@ namespace Uranium
 
 		std::string CreateUUID()
 		{
-			return std::string(Uranium::GlobalUUIDGenerator.getUUID().bytes());
+			return std::string(Uranium::GlobalUUIDGenerator.getUUID().str());
 		}
 	}
 }
