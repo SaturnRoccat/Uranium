@@ -29,6 +29,9 @@
     <ClInclude Include="include\Object\ObjectComponents\BlockComponents\collision_box.h" />
     <ClInclude Include="include\Object\ObjectComponents\BlockComponents\crafting_table.h" />
     <ClInclude Include="include\Object\ObjectComponents\BlockComponents\destructible_by_explosion.h" />
+    <ClInclude Include="include\Object\ObjectComponents\BlockComponents\destructible_by_mining.h" />
+    <ClInclude Include="include\Object\ObjectComponents\BlockComponents\display_name.h" />
+    <ClInclude Include="include\Object\ObjectComponents\BlockComponents\flammable.h" />
     <ClInclude Include="include\Object\ObjectComponents\ObjectComponents.h" />
     <ClInclude Include="include\rapidjson\allocators.h" />
     <ClInclude Include="include\rapidjson\document.h" />
@@ -81,10 +84,13 @@
     <ClCompile Include="src\Object\BlockComponent\collision_box.cpp" />
     <ClCompile Include="src\Object\BlockComponent\crafting_table.cpp" />
     <ClCompile Include="src\Object\BlockComponent\destructible_by_explosion.cpp" />
+    <ClCompile Include="src\Object\BlockComponent\display_name.cpp" />
+    <ClCompile Include="src\Object\BlockComponent\flammable.cpp" />
     <ClCompile Include="src\Object\BlockObject.cpp" />
     <ClCompile Include="src\Object\BlockComponent\bone_visibility.cpp" />
     <ClCompile Include="src\Object\CompilerObject.cpp" />
     <ClCompile Include="src\Logger\Logger.cpp" />
+    <ClCompile Include="src\Object\BlockComponent\destructible_by_mining.cpp" />
     <ClCompile Include="src\Registeries\ObjectRegistery.cpp" />
     <ClCompile Include="src\Object\Uranium.cpp" />
     <ClCompile Include="src\UraniumGlobals.cpp" />

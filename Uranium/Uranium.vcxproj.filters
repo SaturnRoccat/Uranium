@@ -183,6 +183,15 @@
     <ClInclude Include="include\Object\ObjectComponents\BlockComponents\destructible_by_explosion.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\Object\ObjectComponents\BlockComponents\destructible_by_mining.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Object\ObjectComponents\BlockComponents\display_name.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Object\ObjectComponents\BlockComponents\flammable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Object\Uranium.cpp">
@@ -219,6 +228,15 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\Object\BlockComponent\destructible_by_explosion.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Object\BlockComponent\destructible_by_mining.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Object\BlockComponent\display_name.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Object\BlockComponent\flammable.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

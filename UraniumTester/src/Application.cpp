@@ -8,6 +8,9 @@
 #include <Object/ObjectComponents/BlockComponents/collision_box.h>
 #include <Object/ObjectComponents/BlockComponents/crafting_table.h>
 #include <Object/ObjectComponents/BlockComponents/destructible_by_explosion.h>
+#include <Object/ObjectComponents/BlockComponents/destructible_by_mining.h>
+#include <Object/ObjectComponents/BlockComponents/display_name.h>
+#include <Object/ObjectComponents/BlockComponents/flammable.h>
 
 
 Application::Application() : dk(new Uranium::UraniumDK())
@@ -20,9 +23,13 @@ Application::Application() : dk(new Uranium::UraniumDK())
 	block->addComponent <Uranium::Creation::Components::BlockComponents::box_breathability> ();
 	block->addComponent <Uranium::Creation::Components::BlockComponents::CollisionBox> ();
 	block->addComponent <Uranium::Creation::Components::BlockComponents::CraftingTable> ();
+	block->addComponent <Uranium::Creation::Components::BlockComponents::DestructibleByMining> ();
+	block->addComponent <Uranium::Creation::Components::BlockComponents::DisplayName> ();
 
 	Uranium::Creation::Components::BlockComponents::DestructibleByExplosion* destructibleByExplosion = new Uranium::Creation::Components::BlockComponents::DestructibleByExplosion(20);
 	block->addComponent(destructibleByExplosion);
+	Uranium::Creation::Components::BlockComponents::Flammable* flammable = new Uranium::Creation::Components::BlockComponents::Flammable(20, 40);
+	block->addComponent(flammable);
 	rapidjson::Document doc;
 	block->getAsJsonData(&doc);
 	Uranium::Logs::Logger::Info("Exiting");
