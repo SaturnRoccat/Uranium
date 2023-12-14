@@ -180,6 +180,9 @@
     <ClInclude Include="include\Object\ObjectComponents\BlockComponents\crafting_table.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\Object\ObjectComponents\BlockComponents\destructible_by_explosion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Object\Uranium.cpp">
@@ -213,6 +216,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\Object\BlockComponent\crafting_table.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Object\BlockComponent\destructible_by_explosion.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

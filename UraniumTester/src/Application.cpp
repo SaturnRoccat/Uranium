@@ -7,6 +7,7 @@
 #include <Object/ObjectComponents/BlockComponents/box_breathability.h>
 #include <Object/ObjectComponents/BlockComponents/collision_box.h>
 #include <Object/ObjectComponents/BlockComponents/crafting_table.h>
+#include <Object/ObjectComponents/BlockComponents/destructible_by_explosion.h>
 
 
 Application::Application() : dk(new Uranium::UraniumDK())
@@ -19,6 +20,9 @@ Application::Application() : dk(new Uranium::UraniumDK())
 	block->addComponent <Uranium::Creation::Components::BlockComponents::box_breathability> ();
 	block->addComponent <Uranium::Creation::Components::BlockComponents::CollisionBox> ();
 	block->addComponent <Uranium::Creation::Components::BlockComponents::CraftingTable> ();
+
+	Uranium::Creation::Components::BlockComponents::DestructibleByExplosion* destructibleByExplosion = new Uranium::Creation::Components::BlockComponents::DestructibleByExplosion(20);
+	block->addComponent(destructibleByExplosion);
 	rapidjson::Document doc;
 	block->getAsJsonData(&doc);
 	Uranium::Logs::Logger::Info("Exiting");
