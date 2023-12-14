@@ -34,8 +34,10 @@ namespace Uranium
 		public:
 			std::string componentName = "";
 			std::vector<Experiments> requiredExperiments = { Experiments::None };
-			virtual JsonData getAsJsonData() = 0; // We use then 
-			ObjectComponent(const char* name, std::vector<Experiments> requiredExperiments = { Experiments::None }) : componentName(name), requiredExperiments(requiredExperiments) {}
+			const bool skipInCompiliation = false;
+		public:
+			virtual void getAsJsonData(rapidjson::Value* writeDoc, rapidjson::MemoryPoolAllocator<>& allocator) = 0; // We use then 
+			ObjectComponent(const char* name, std::vector<Experiments> requiredExperiments = { Experiments::None }, bool skipCompilation = false) : componentName(name), requiredExperiments(requiredExperiments), skipInCompiliation(skipCompilation) {}
 		};
 	}
 }

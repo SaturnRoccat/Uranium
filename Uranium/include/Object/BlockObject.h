@@ -9,12 +9,12 @@ namespace Uranium
 {
 	namespace Creation
 	{
-		class BlockObject : public BaseObject<BlockComponent>
+		class BlockObject : public BaseObject<Components::BlockComponents::BlockComponent>
 		{
 		public:
 			BlockObject(const char* name) : BaseObject(name) {}
 
-			rapidjson::Document GetAsJson() override;
+			void getAsJsonData(rapidjson::Document* doc) override;
 		private:
 			void recursiveCompileComponents(rapidjson::Document* doc);
         };

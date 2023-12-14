@@ -45,4 +45,118 @@ namespace Uranium
 			return std::to_string(major) + "." + std::to_string(minor) + "." + std::to_string(patch);
 		}
 	};
+
+	template<typename T>
+	class Vector3
+	{
+	public:
+		Vector3(T x, T y, T z)
+			: x(x), y(y), z(z) {}
+		T x;
+		T y;
+		T z;
+
+		// Copy Constructor
+		Vector3(const Vector3& other)
+			: x(other.x), y(other.y), z(other.z) {}
+
+		// Overloading the assignment operator for conventional assignment
+		Vector3& operator=(const Vector3& other) {
+			if (this != &other) {
+				x = other.x;
+				y = other.y;
+				z = other.z;
+			}
+			return *this;
+		}
+
+		// Overloading the << operator for outputting the version
+		friend std::ostream& operator<<(std::ostream& os, const Vector3& vector) {
+			os << vector.x << ',' << vector.y << ',' << vector.z;
+			return os;
+		}
+
+		bool operator==(const Vector3& other) const {
+			return x == other.x && y == other.y && z == other.z;
+		}
+
+		bool operator!=(const Vector3& other) const {
+			return !(*this == other);
+		}
+
+		inline std::string toString() const {
+			return std::to_string(x) + "," + std::to_string(y) + "," + std::to_string(z);
+		}
+
+		inline Vector3 operator+(const Vector3& other) const {
+			return Vector3(x + other.x, y + other.y, z + other.z);
+		}
+
+		inline Vector3 operator-(const Vector3& other) const {
+			return Vector3(x - other.x, y - other.y, z - other.z);
+		}
+
+		inline Vector3 operator*(const Vector3& other) const {
+			return Vector3(x * other.x, y * other.y, z * other.z);
+		}
+
+		inline Vector3 operator/(const Vector3& other) const {
+			return Vector3(x / other.x, y / other.y, z / other.z);
+		}
+
+		inline Vector3 operator+(const T& other) const {
+			return Vector3(x + other, y + other, z + other);
+		}
+
+		inline Vector3 operator-(const T& other) const {
+			return Vector3(x - other, y - other, z - other);
+		}
+
+		inline Vector3 operator*(const T& other) const {
+			return Vector3(x * other, y * other, z * other);
+		}
+
+		inline Vector3 operator/(const T& other) const {
+			return Vector3(x / other, y / other, z / other);
+		}
+
+		inline Vector3& operator+=(const Vector3& other) {
+			x += other.x;
+			y += other.y;
+			z += other.z;
+			return *this;
+		}
+
+		inline Vector3& operator-=(const Vector3& other) {
+			x -= other.x;
+			y -= other.y;
+			z -= other.z;
+			return *this;
+		}
+
+		inline Vector3& operator*=(const Vector3& other) {
+			x *= other.x;
+			y *= other.y;
+			z *= other.z;
+			return *this;
+		}
+
+		inline Vector3& operator/=(const Vector3& other) {
+			x /= other.x;
+			y /= other.y;
+			z /= other.z;
+			return *this;
+		}
+
+		inline std::array<T, 3> toArray() const {
+			return { x, y, z };
+		}
+
+	};
+
+
+	typedef Vector3<float> Vec3f;
+	typedef Vector3<double> Vec3d;
+	typedef Vector3<int> Vec3i;
+	
 }

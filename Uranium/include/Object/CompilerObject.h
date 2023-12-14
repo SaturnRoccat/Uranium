@@ -30,7 +30,8 @@ namespace Uranium
 			BaseObject(const char* name) {
 				objectName = name;
 			}
-			void addComponent(ObjectComponent* component) {
+			template <typename ComponentType>
+			void addComponent(ComponentType* component) {
 				objectRegistery.registerDynamicObject(component, component->componentName);
 			} 
 
@@ -40,7 +41,7 @@ namespace Uranium
 				objectRegistery.registerStaticObject<ComponentType>(name);
 			}
 
-			virtual rapidjson::Document GetAsJson() = 0;
+			virtual void getAsJsonData(rapidjson::Document* doc) = 0;
 
 		};
 	} // namespace Creation

@@ -165,9 +165,21 @@
     <ClInclude Include="include\Object\ObjectComponents\BlockComponents\BlockComponent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\Object\ObjectComponents\BlockComponents\bone_visibility.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Object\ObjectComponents\BlockComponents\box_breathability.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Object\ObjectComponents\BlockComponents\collision_box.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Object\ItemGroups.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Uranium.cpp">
+    <ClCompile Include="src\Object\Uranium.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\Registeries\ObjectRegistery.cpp">
@@ -183,6 +195,18 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\Object\BlockObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Object\BlockComponent\bone_visibility.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Object\BlockComponent\box_breathability.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\UraniumGlobals.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Object\BlockComponent\collision_box.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

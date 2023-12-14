@@ -19,10 +19,14 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\Object\ItemGroups.h" />
+    <ClInclude Include="include\Object\ObjectComponents\BlockComponents\box_breathability.h" />
     <ClInclude Include="include\Object\BlockObject.h" />
     <ClInclude Include="include\Object\CompilerObject.h" />
     <ClInclude Include="include\Logger\Logger.h" />
     <ClInclude Include="include\Object\ObjectComponents\BlockComponents\BlockComponent.h" />
+    <ClInclude Include="include\Object\ObjectComponents\BlockComponents\bone_visibility.h" />
+    <ClInclude Include="include\Object\ObjectComponents\BlockComponents\collision_box.h" />
     <ClInclude Include="include\Object\ObjectComponents\ObjectComponents.h" />
     <ClInclude Include="include\rapidjson\allocators.h" />
     <ClInclude Include="include\rapidjson\document.h" />
@@ -71,11 +75,15 @@
     <ClInclude Include="include\UUID_V4\UUID_V4.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Object\BlockComponent\box_breathability.cpp" />
+    <ClCompile Include="src\Object\BlockComponent\collision_box.cpp" />
     <ClCompile Include="src\Object\BlockObject.cpp" />
+    <ClCompile Include="src\Object\BlockComponent\bone_visibility.cpp" />
     <ClCompile Include="src\Object\CompilerObject.cpp" />
     <ClCompile Include="src\Logger\Logger.cpp" />
     <ClCompile Include="src\Registeries\ObjectRegistery.cpp" />
-    <ClCompile Include="src\Uranium.cpp" />
+    <ClCompile Include="src\Object\Uranium.cpp" />
+    <ClCompile Include="src\UraniumGlobals.cpp" />
     <ClCompile Include="src\Utils\UtilFunctions.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

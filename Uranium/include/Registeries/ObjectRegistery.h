@@ -32,13 +32,14 @@ namespace Uranium
 			void registerDynamicObject(objectType* object, std::string& name = "")
 			{
 				// Make sure that the object is a child of the registery type.
-				static_assert(std::is_base_of<RegisteryType, objectType>::value, "The object you are trying to register is not a child of the registery type."); 
+				//static_assert(std::is_base_of<RegisteryType, objectType>::value, "The object you are trying to register is not a child of the registery type."); 
 
 				// If the name is empty, then we will use the name of the object.
 				if (name == "")
 				{
 					name = TYPEOF(object);
 				}
+				DEBUG_PRINT("Registering Object: {}", name);
 				m_localRegistery[name] = object;
 			}
 
@@ -52,13 +53,14 @@ namespace Uranium
 			constexpr void registerStaticObject(std::string name = "")
 			{
 				// Make sure that the object is a child of the registery type.
-				static_assert(std::is_base_of<RegisteryType, objectType>::value, "The object you are trying to register is not a child of the registery type.");
-
+				// static_assert(std::is_base_of<RegisteryType, objectType>::value, "The object you are trying to register is not a child of the registery type.");
+				
 				// If the name is empty, then we will use the name of the object.
 				if (name == "")
 				{
 					name = TYPEOF(objectType);
 				}
+				DEBUG_PRINT("Registering Object: {}", name);
 				m_localRegistery[name] = new objectType();
 			}
 
@@ -83,13 +85,13 @@ namespace Uranium
 			}
 
 			// Itterator support.
-			typename std::unordered_map<std::string, RegisteryType*>::iterator begin()
+			typename std::unordered_map<std::string, RegisteryType>::iterator begin()
 			{
 				return m_localRegistery.begin();
 			}
 
 			// Itterator support.
-			typename std::unordered_map<std::string, RegisteryType*>::iterator end()
+			typename std::unordered_map<std::string, RegisteryType>::iterator end()
 			{
 				return m_localRegistery.end();
 			}

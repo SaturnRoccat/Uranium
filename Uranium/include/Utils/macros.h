@@ -3,6 +3,8 @@
 #include <string>
 #include <assert.h>
 #include <type_traits>
+#include <Logger/Logger.h>
+#include <UraniumGlobals.h>
 
 #ifndef DEMANGLE_NAME_BUFFER_SIZE 
 	#define DEMANGLE_NAME_BUFFER_SIZE 1024
@@ -19,6 +21,12 @@
 #ifdef __clang__
 	#include <cxxabi.h>
 #endif
+
+#ifdef NDEBUG
+#else
+#define URANIUM_DEBUG
+#endif
+
 
 // Checks if the compiler is ran on Windows.
 #ifdef _WIN32 
@@ -80,3 +88,25 @@
 * *
 */
 #define IS_CHILD_OF(child, parent) static_assert(std::is_base_of<parent, child>::value, "The Child of Type " + #child + " is not a child of the Parent of Type " + #parent + ".");
+
+/**
+* @brief This macro is used to pring messages when in debug mode.
+*/
+#ifdef URANIUM_DEBUG
+#define DEBUG_PRINT(x, ...) Uranium::Logs::Logger::Info(x, __VA_ARGS__)
+#else
+	#define DEBUG_PRINT(x)
+#endif
+
+/**
+* @brief This macro is used to run code when in debug mode.
+*/
+#ifdef URANIUM_DEBUG
+#define DEBUG_CODE(x) x
+	#else
+#define DEBUG_CODE(x)
+#endif
+
+#define RJ_STL_V(x, allocator) rapidjson::Value(x.c_str(), x.size(), allocator)
+#define RJ_STL_S(x) rapidjson::StringRef(x.c_str(), x.size())
+

@@ -15,8 +15,8 @@ namespace Uranium {
 	public:
 		Creation::ObjectRegistery<Creation::BlockObject> BlockRegistery;
 	public:
-		UraniumDK(const std::string& addonPrefix = "UraniumGenerated") {
-			Uranium::GlobalProjectNamespace = addonPrefix;
+		UraniumDK(const std::string& addonPrefix = "uranium_generated") {
+			SetGlobalProjectNamespace(addonPrefix);
 		}
 	}; 
 } // namespace Uranium
