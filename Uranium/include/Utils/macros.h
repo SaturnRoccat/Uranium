@@ -70,6 +70,19 @@
 	#endif
 #endif
 
+/**
+* @brief This macro is used to mark a function as deprecated.
+* * We use this instead of the [[deprecated]] attribute because it is not supported on all compilers. so we only use it if we dont know what compiler we are using.
+* * @param x The message to display when the function is called.
+* * @return void
+*/
+#if defined(__GNUC__) || defined(__GNUG__) || defined(__clang__)
+	#define DEPRECATED(x) __attribute__((deprecated(x)))
+#elif defined(_MSC_VER)
+	#define DEPRECATED(x) __declspec(deprecated(x))
+#else
+	#define DEPRECATED(x) [[deprecated(x)]]
+#endif
 
 /**
 * @brief This macro is used to get the name and type of a token.
@@ -107,6 +120,13 @@
 #define DEBUG_CODE(x)
 #endif
 
+/**
+* @brief This macro is used to convert a STL string into a rapidjson string value.
+*/
 #define RJ_STL_V(x, allocator) rapidjson::Value(x.c_str(), x.size(), allocator)
+
+/**
+* @brief This macro is used to convert a STL string into a rapidjson string reference.
+*/
 #define RJ_STL_S(x) rapidjson::StringRef(x.c_str(), x.size())
 
