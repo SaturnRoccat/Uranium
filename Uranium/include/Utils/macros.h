@@ -130,3 +130,15 @@
 */
 #define RJ_STL_S(x) rapidjson::StringRef(x.c_str(), x.size())
 
+/**
+* @brief This macro is used to convert a STL vector into a rapidjson array value.
+* * @param name The name of the array.
+* * @param x The vector to convert.
+* * @param allocator The allocator to use.
+* * @return void
+*/
+#define RJ_STL_V_A(name, x, allocator)\
+rapidjson::Value name(rapidjson::kArrayType);\
+for (auto& i : x) {\
+	name.PushBack(i, allocator);\
+}

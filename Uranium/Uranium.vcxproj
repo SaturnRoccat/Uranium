@@ -27,6 +27,7 @@
     <ClInclude Include="include\Object\ObjectComponents\BlockComponents\BlockComponent.h" />
     <ClInclude Include="include\Object\ObjectComponents\BlockComponents\bone_visibility.h" />
     <ClInclude Include="include\Object\ObjectComponents\BlockComponents\collision_box.h" />
+    <ClInclude Include="include\Object\ObjectComponents\BlockComponents\crafting_table.h" />
     <ClInclude Include="include\Object\ObjectComponents\ObjectComponents.h" />
     <ClInclude Include="include\rapidjson\allocators.h" />
     <ClInclude Include="include\rapidjson\document.h" />
@@ -77,6 +78,7 @@
   <ItemGroup>
     <ClCompile Include="src\Object\BlockComponent\box_breathability.cpp" />
     <ClCompile Include="src\Object\BlockComponent\collision_box.cpp" />
+    <ClCompile Include="src\Object\BlockComponent\crafting_table.cpp" />
     <ClCompile Include="src\Object\BlockObject.cpp" />
     <ClCompile Include="src\Object\BlockComponent\bone_visibility.cpp" />
     <ClCompile Include="src\Object\CompilerObject.cpp" />
