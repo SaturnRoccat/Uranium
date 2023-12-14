@@ -3,7 +3,7 @@
 #include <iostream>
 #include <chrono>
 #include <Logger/Logger.h>
-
+#include <Utils/macros.h>
 namespace Uranium
 {
 	namespace Utils
@@ -25,6 +25,12 @@ namespace Uranium
         private:
             std::chrono::time_point<std::chrono::high_resolution_clock> start;
             const std::string name;
+        };
+
+
+        static auto StrToRJ(std::string& translation)
+        {
+            return RJ_STL_S(translation);
         };
 	}
 }
