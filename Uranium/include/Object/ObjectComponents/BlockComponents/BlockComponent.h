@@ -1,6 +1,7 @@
 #pragma once
 #include "../ObjectComponents.h"
 #include <Utils/macros.h>
+#include <Utils/UtilFunctions.h>
 
 namespace Uranium
 {

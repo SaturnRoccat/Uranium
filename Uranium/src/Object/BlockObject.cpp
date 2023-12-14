@@ -47,7 +47,7 @@ namespace Uranium
             //TODO: add permutations
             DEBUG_CODE(
                 rapidjson::StringBuffer buffer;
-                rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+                rapidjson::PrettyWriter<rapidjson::StringBuffer> writer(buffer);
                 doc->Accept(writer);
                 DEBUG_PRINT(buffer.GetString()); // print the json to the console
             )
