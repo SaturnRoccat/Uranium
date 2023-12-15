@@ -18,15 +18,16 @@
 #include <Object/ObjectComponents/BlockComponents/loot.h>
 #include <Object/ObjectComponents/BlockComponents/mapColor.h>
 #include <Object/ObjectComponents/BlockComponents/materialInstances.h>
-
+#define TEST_CONSTANT 1000000
 using namespace Uranium::Creation::Components::BlockComponents;
 
 Application::Application() : udk(new Uranium::UraniumDK())
 {
 
+	long long* a = new long long(0);
 	{
-		Uranium::Utils::Timer timer("Creation Of Block");
-		for (int i = 0; i < 100; i++)
+		Uranium::Utils::Timer timer(a);
+		for (int i = 0; i < TEST_CONSTANT; i++)
 		{
 			std::string uuid = Uranium::Utils::CreateUUID();
 			auto* block = new Uranium::Creation::BlockObject(uuid.c_str());
@@ -103,12 +104,13 @@ Application::Application() : udk(new Uranium::UraniumDK())
 			};
 			MaterialInstances* materialInstances = new MaterialInstances(segments);
 			block->addComponent(materialInstances);
-			rapidjson::Document doc;
-			block->getAsJsonData(&doc);
+			//rapidjson::Document doc;
+			//block->getAsJsonData(&doc);
 			//Uranium::Logs::Logger::Info("Exiting");
 			udk->RegisterBlock(block);
 		}
 	}
+	Uranium::Logs::Logger::Info("Average Of {} per block ns or {} ms", long double(*a) / TEST_CONSTANT, (long double(*a) / TEST_CONSTANT) / 1000000);
 
 	{
 		//Uranium::Utils::Timer timer("Dumping Registery");

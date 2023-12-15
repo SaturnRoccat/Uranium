@@ -15,22 +15,22 @@ namespace Uranium
         class Timer {
         public:
             Timer(const std::string& name) : name(name), start(std::chrono::high_resolution_clock::now()) {}
-            Timer(int* writeLocation) : writeLocation(writeLocation), start(std::chrono::high_resolution_clock::now()) {}
+            Timer(long long* writeLocation) : writeLocation(writeLocation), start(std::chrono::high_resolution_clock::now()) {}
 
             ~Timer() {
                 auto end = std::chrono::high_resolution_clock::now();
-                auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(end - start);
+                auto duration = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start);
                 if (writeLocation != nullptr) {
 					*writeLocation = duration.count();
                     return;
 				}
-                Logs::Logger::Info("Timer {} has, Elapsed time: {}, milliseconds", name, duration.count());
+                Logs::Logger::Info("Timer {} has, Elapsed time: {}, nanoseconds", name, duration.count());
             }
 
         private:
             std::chrono::time_point<std::chrono::high_resolution_clock> start;
             const std::string name;
-            int* writeLocation = nullptr;
+            long long* writeLocation = nullptr;
         };
 
 
@@ -40,6 +40,17 @@ namespace Uranium
         };
 	}
 }
+
+#define BENCHMARK_FUNCTION_AVERAGE(Function, Count, ...) \
+{ \
+    int* timerHandler = new int; \
+	Uranium::Utils::Timer timer(timerHandler); \
+	for (int i = 0; i < Count; i++) { \
+		Function(__VA_ARGS__); \
+	} \
+    Uranium::Logs::Logger::Info("Average Time Of Function: {}", #Function, *timerHandler / Count); \
+}
+
 
 
 #define BENCHMARK_FUNCTION(Function, Count, ...) \

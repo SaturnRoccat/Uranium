@@ -248,6 +248,11 @@ namespace Uranium
                 portalAxis             ,
                 attachedBit            ,
             };
+
+            std::string getBlockStateName(BlockStates state)
+            {
+				return internalBlockStatesRep[static_cast<int>(state)];
+			}
 		}
 	}
 }
