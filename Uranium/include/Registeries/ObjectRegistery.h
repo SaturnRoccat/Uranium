@@ -96,6 +96,14 @@ namespace Uranium
 				return m_localRegistery.end();
 			}
 
+			~ObjectRegistery()
+			{
+				for (auto& object : m_localRegistery)
+				{
+					delete object.second;
+				}
+			}
+
 		private:
 		};
 	} // namespace Creation

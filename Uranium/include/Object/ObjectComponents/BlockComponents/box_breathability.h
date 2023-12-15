@@ -1,6 +1,6 @@
 #pragma once
 #include "BlockComponent.h"
-#if URANIUM_TARGET_FORMAT_VERSION <= 12050
+#if URANIUM_TARGET_FORMAT_VERSION <= 11941
 namespace Uranium
 {
 	namespace Creation

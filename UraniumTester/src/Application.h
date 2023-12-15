@@ -11,6 +11,6 @@ public:
 		Uranium::Logs::Logger::close();
 	}
 
-	Uranium::UraniumDK* dk;
+	Uranium::UraniumDK* udk;
 };
 

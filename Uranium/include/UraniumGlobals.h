@@ -14,6 +14,7 @@ namespace Uranium
     void SetGlobalProjectNamespace(const std::string& newValue);
 }
 
+#define EXPOSE_DEBUG_FUNCTIONS 1
 
 #ifndef URANIUM_FORMAT_1_20_50
 	#define URANIUM_FORMAT_1_20_50 12050

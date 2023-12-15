@@ -1,14 +1,14 @@
 #pragma once
 #include <string>
 #include <array>
-
+#include <vector>
 namespace Uranium
 {
 	namespace Creation
 	{
 		namespace ItemGroups
 		{
-			static const std::array<std::string, 118> ItemGroupNames = {
+			static const std::vector<std::string> ItemGroupNames = {
 				"itemGroup.name.planks",
 				"itemGroup.name.walls",
 				"itemGroup.name.fence",

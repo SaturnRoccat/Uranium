@@ -5,7 +5,8 @@
 #include <type_traits>
 #include <Logger/Logger.h>
 #include <UraniumGlobals.h>
-
+#include <Utils/UtilFunctions.h>
+#include <tuple> // We are going to abuse tuples for this.
 #ifndef DEMANGLE_NAME_BUFFER_SIZE 
 	#define DEMANGLE_NAME_BUFFER_SIZE 1024
 #endif
@@ -157,3 +158,108 @@ rapidjson::Value name(rapidjson::kArrayType);\
 for (auto& i : x) {\
 	name.PushBack(ConvertionCall(i), allocator);\
 }
+
+/**
+* This is an internal macro used for quick creation of components. That have a single type.
+*/
+#define COMPONENT_DEFINE_SINGLE_TYPE(name, type, inheritComponent, componentName, deepNamespace, defaultValue)\
+namespace Uranium{namespace Creation{namespace Components{namespace deepNamespace{\
+				class name : public inheritComponent\
+				{\
+				public:\
+					type value = defaultValue;\
+					name(const type& value = defaultValue) : value(value), inheritComponent(componentName) {}\
+					void getAsJsonData(rapidjson::Value* writeDoc, rapidjson::MemoryPoolAllocator<>& allocator) override\
+					{\
+						rapidjson::Value value(this->value);\
+						writeDoc->AddMember(componentName, value, allocator);\
+					}\
+				};\
+			}}}}
+
+/**
+* This is an internal macro used for quick creation of components. That have a single type. That allows for data to be passed to the constructor.
+*/
+#define COMPONENT_DEFINE_SINGLE_TYPE_VA(name, type, inheritComponent, componentName, deepNamespace, defaultValue, ...)\
+namespace Uranium{namespace Creation{namespace Components{namespace deepNamespace{\
+				class name : public inheritComponent\
+				{\
+				public:\
+					type value = defaultValue;\
+					name(const type& value = defaultValue) : value(value), inheritComponent(componentName, __VA_ARGS__) {}\
+					void getAsJsonData(rapidjson::Value* writeDoc, rapidjson::MemoryPoolAllocator<>& allocator) override\
+					{\
+						rapidjson::Value value(this->value);\
+						writeDoc->AddMember(componentName, value, allocator);\
+					}\
+				};\
+			}}}}
+
+/**
+* * This is an internal macro used for quick creation of components. That have a single type. That allows for data to be passed to the constructor. And a convertion call.
+*/
+#define COMPONENT_DEFINE_SINGLE_TYPE_VA_EX(name, type, inheritComponent, componentName, deepNamespace, defaultValue, convertionCall, ...)\
+namespace Uranium{namespace Creation{namespace Components{namespace deepNamespace{\
+				class name : public inheritComponent\
+				{\
+				public:\
+					type value = defaultValue;\
+					name(const type& value = defaultValue) : value(value), inheritComponent(componentName, __VA_ARGS__) {}\
+					void getAsJsonData(rapidjson::Value* writeDoc, rapidjson::MemoryPoolAllocator<>& allocator) override\
+					{\
+						rapidjson::Value value(convertionCall(this->value));\
+						writeDoc->AddMember(componentName, value, allocator);\
+					}\
+				};\
+				}}}}
+
+/**
+* This is an internal macro used for quick creation of components. That have a single type. And a convertion call.
+*/
+#define COMPONENT_DEFINE_SINGLE_TYPE_EX(name, type, inheritComponent, componentName, deepNamespace, defaultValue, convertionCall)\
+namespace Uranium{namespace Creation{namespace Components{namespace deepNamespace{\
+				class name : public inheritComponent\
+				{\
+				public:\
+					type value = defaultValue;\
+					name(const type& value = defaultValue) : value(value), inheritComponent(componentName) {}\
+					void getAsJsonData(rapidjson::Value* writeDoc, rapidjson::MemoryPoolAllocator<>& allocator) override\
+					{\
+						rapidjson::Value value(convertionCall(this->value));\
+						writeDoc->AddMember(componentName, value, allocator);\
+					}\
+				};\
+			}}}}
+
+/**
+* This is an internal macro used to set a value in a rapidjson document if it is not the default value.
+*/
+#define SET_IF_NOT_DEFAULT(value, defaultValue, writeDoc, allocator, name, operatorToCallWith)\
+if (value != defaultValue) {\
+	rapidjson::Value valueT(value);\
+	writeDoc operatorToCallWith AddMember(name, valueT, allocator);\
+}
+
+/**
+* This is an internal macro used to set a value in a rapidjson document if it is not the default value. But this allows for a convertion call.
+*/
+#define SET_IF_NOT_DEFAULT_EX(value, defaultValue, writeDoc, allocator, name, convertionCall, operatorToCallWith)\
+if (value != defaultValue) {\
+	rapidjson::Value valueT(convertionCall(value));\
+	writeDoc operatorToCallWith AddMember(name, valueT, allocator);\
+}
+
+#define COMPONENT_DEFINE_ADVANCED(Name, InheritComponent, ComponentName, VariableDeclarations, ConvertionCallBody, defaltConstructorDeclarations)\
+namespace Uranium{namespace Creation{namespace Components{namespace Name{\
+				class Name : public InheritComponent\
+				{\
+				private:\
+					VariableDeclarations\
+				public:\
+                    Name(defaltConstructorDeclarations) : InheritComponent(ComponentName) {}\
+					void getAsJsonData(rapidjson::Value* writeDoc, rapidjson::MemoryPoolAllocator<>& allocator) override\
+					{\
+						ConvertionCallBody\
+					}\
+				};\
+			}}}}

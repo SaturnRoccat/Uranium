@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\Object\BlockStates.h" />
     <ClInclude Include="include\Object\ItemGroups.h" />
     <ClInclude Include="include\Object\ObjectComponents\BlockComponents\box_breathability.h" />
     <ClInclude Include="include\Object\BlockObject.h" />
@@ -32,6 +33,16 @@
     <ClInclude Include="include\Object\ObjectComponents\BlockComponents\destructible_by_mining.h" />
     <ClInclude Include="include\Object\ObjectComponents\BlockComponents\display_name.h" />
     <ClInclude Include="include\Object\ObjectComponents\BlockComponents\flammable.h" />
+    <ClInclude Include="include\Object\ObjectComponents\BlockComponents\friction.h" />
+    <ClInclude Include="include\Object\ObjectComponents\BlockComponents\geometry.h" />
+    <ClInclude Include="include\Object\ObjectComponents\BlockComponents\light_dampening.h" />
+    <ClInclude Include="include\Object\ObjectComponents\BlockComponents\light_emissions.h" />
+    <ClInclude Include="include\Object\ObjectComponents\BlockComponents\loot.h" />
+    <ClInclude Include="include\Object\ObjectComponents\BlockComponents\mapColor.h" />
+    <ClInclude Include="include\Object\ObjectComponents\BlockComponents\materialInstances.h" />
+    <ClInclude Include="include\Object\ObjectComponents\BlockComponents\placementFilter.h" />
+    <ClInclude Include="include\Object\ObjectComponents\BlockComponents\SubClasses\materialInstanceSegment.h" />
+    <ClInclude Include="include\Object\ObjectComponents\BlockComponents\SubClasses\placementFilterData.h" />
     <ClInclude Include="include\Object\ObjectComponents\ObjectComponents.h" />
     <ClInclude Include="include\rapidjson\allocators.h" />
     <ClInclude Include="include\rapidjson\document.h" />
@@ -86,6 +97,9 @@
     <ClCompile Include="src\Object\BlockComponent\destructible_by_explosion.cpp" />
     <ClCompile Include="src\Object\BlockComponent\display_name.cpp" />
     <ClCompile Include="src\Object\BlockComponent\flammable.cpp" />
+    <ClCompile Include="src\Object\BlockComponent\friction.cpp" />
+    <ClCompile Include="src\Object\BlockComponent\geometry.cpp" />
+    <ClCompile Include="src\Object\BlockComponent\materialInstances.cpp" />
     <ClCompile Include="src\Object\BlockObject.cpp" />
     <ClCompile Include="src\Object\BlockComponent\bone_visibility.cpp" />
     <ClCompile Include="src\Object\CompilerObject.cpp" />

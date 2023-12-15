@@ -160,3 +160,5 @@ namespace Uranium
 	typedef Vector3<int> Vec3i;
 	
 }
+
+typedef const std::string& ConstStringRef;
