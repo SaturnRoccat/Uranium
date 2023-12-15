@@ -20,9 +20,9 @@ namespace Uranium
 					public:
 						const std::string name;
 						std::vector<std::pair<BlockStates::BlockStates, std::string>> states;
-						const std::string tags;
+						std::string tags;
 					public:
-						placementFilterData(ConstStringRef name, const std::vector<std::pair<BlockStates::BlockStates, std::string>>& states, ConstStringRef tags = "1") : name(name), states(states), tags(tags) {}
+						placementFilterData(ConstStringRef name, const std::vector<std::pair<BlockStates::BlockStates, std::string>>& states = {}, ConstStringRef tags = "1") : name(name), states(states), tags(tags) {}
 					};
 				}
 			}

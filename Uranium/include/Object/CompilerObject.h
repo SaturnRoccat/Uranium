@@ -40,7 +40,7 @@ namespace Uranium
 			{
 				objectRegistery.registerStaticObject<ComponentType>(name);
 			}
-
+			
 			virtual void getAsJsonData(rapidjson::Document* doc) = 0;
 
 		};

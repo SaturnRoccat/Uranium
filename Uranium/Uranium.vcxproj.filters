@@ -225,6 +225,9 @@
     <ClInclude Include="include\Object\BlockStates.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\Object\ObjectComponents\BlockComponents\queuedTicking.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Object\Uranium.cpp">
@@ -279,6 +282,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\Object\BlockComponent\materialInstances.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Object\BlockComponent\PlacementFilter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

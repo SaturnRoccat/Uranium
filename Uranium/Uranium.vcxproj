@@ -41,6 +41,7 @@
     <ClInclude Include="include\Object\ObjectComponents\BlockComponents\mapColor.h" />
     <ClInclude Include="include\Object\ObjectComponents\BlockComponents\materialInstances.h" />
     <ClInclude Include="include\Object\ObjectComponents\BlockComponents\placementFilter.h" />
+    <ClInclude Include="include\Object\ObjectComponents\BlockComponents\queuedTicking.h" />
     <ClInclude Include="include\Object\ObjectComponents\BlockComponents\SubClasses\materialInstanceSegment.h" />
     <ClInclude Include="include\Object\ObjectComponents\BlockComponents\SubClasses\placementFilterData.h" />
     <ClInclude Include="include\Object\ObjectComponents\ObjectComponents.h" />
@@ -100,6 +101,7 @@
     <ClCompile Include="src\Object\BlockComponent\friction.cpp" />
     <ClCompile Include="src\Object\BlockComponent\geometry.cpp" />
     <ClCompile Include="src\Object\BlockComponent\materialInstances.cpp" />
+    <ClCompile Include="src\Object\BlockComponent\PlacementFilter.cpp" />
     <ClCompile Include="src\Object\BlockObject.cpp" />
     <ClCompile Include="src\Object\BlockComponent\bone_visibility.cpp" />
     <ClCompile Include="src\Object\CompilerObject.cpp" />

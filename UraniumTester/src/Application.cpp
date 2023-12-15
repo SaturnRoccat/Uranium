@@ -18,7 +18,9 @@
 #include <Object/ObjectComponents/BlockComponents/loot.h>
 #include <Object/ObjectComponents/BlockComponents/mapColor.h>
 #include <Object/ObjectComponents/BlockComponents/materialInstances.h>
-#define TEST_CONSTANT 1000000
+#include <Object/ObjectComponents/BlockComponents/queuedTicking.h>
+
+#define TEST_CONSTANT 10
 using namespace Uranium::Creation::Components::BlockComponents;
 
 Application::Application() : udk(new Uranium::UraniumDK())
@@ -104,8 +106,8 @@ Application::Application() : udk(new Uranium::UraniumDK())
 			};
 			MaterialInstances* materialInstances = new MaterialInstances(segments);
 			block->addComponent(materialInstances);
-			//rapidjson::Document doc;
-			//block->getAsJsonData(&doc);
+			rapidjson::Document doc;
+			block->getAsJsonData(&doc);
 			//Uranium::Logs::Logger::Info("Exiting");
 			udk->RegisterBlock(block);
 		}
