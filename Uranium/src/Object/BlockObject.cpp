@@ -61,6 +61,7 @@ namespace Uranium
 
             // Loop through all of the components in the objectRegistery
             for (auto comp : this->objectRegistery) {
+                // Call the getAsJsonData function on the component to add it to the componentsObject
                 (*(comp.second)).getAsJsonData(&componentsObject, allocator);
 			}
 		}

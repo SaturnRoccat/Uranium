@@ -1,8 +1,8 @@
 #pragma once
 #include "BlockComponent.h"
 #include <assert.h>
+#include "SubClasses/Trigger.h"
 
-static_assert("Not implemented dumbass");
 namespace Uranium
 {
 	namespace Creation
@@ -13,11 +13,19 @@ namespace Uranium
 			{
 				class queuedTicking : public BlockComponent
 				{
+				private:
+					std::vector<int> intervalRange;
+					bool looping = true;
+					SubClasses::Trigger onTick;
 				public:
-					queuedTicking() : BlockComponent("minecraft:queued_ticking") {}
+					queuedTicking(const std::vector<int>& intervalRange, SubClasses::Trigger onTick, bool looping = true) :
+						intervalRange(intervalRange),
+						looping(looping),
+						onTick(onTick),
+						BlockComponent("minecraft:queued_ticking") {}
 					~queuedTicking() {}
 
-					// void getAsJsonData(rapidjson::Value* writeDoc, rapidjson::MemoryPoolAllocator<>& allocator) override;
+					void getAsJsonData(rapidjson::Value* writeDoc, rapidjson::MemoryPoolAllocator<>& allocator) override;
 				};
 			}
 		}
