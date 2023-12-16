@@ -22,7 +22,7 @@ namespace Uranium
 						intervalRange(intervalRange),
 						looping(looping),
 						onTick(onTick),
-						BlockComponent("minecraft:queued_ticking") {}
+						BlockComponent("minecraft:queued_ticking", {Experiments::HolidayCreatorFeatures}) {}
 					~queuedTicking() {}
 
 					void getAsJsonData(rapidjson::Value* writeDoc, rapidjson::MemoryPoolAllocator<>& allocator) override;

@@ -240,6 +240,12 @@
     <ClInclude Include="include\Object\ObjectComponents\BlockComponents\SubClasses\Trigger.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\Object\ObjectComponents\BlockComponents\randomTicking.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Object\BlockComponent\randomTicking.cpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Object\Uranium.cpp">

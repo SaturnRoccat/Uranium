@@ -42,6 +42,7 @@
     <ClInclude Include="include\Object\ObjectComponents\BlockComponents\materialInstances.h" />
     <ClInclude Include="include\Object\ObjectComponents\BlockComponents\placementFilter.h" />
     <ClInclude Include="include\Object\ObjectComponents\BlockComponents\queuedTicking.h" />
+    <ClInclude Include="include\Object\ObjectComponents\BlockComponents\randomTicking.h" />
     <ClInclude Include="include\Object\ObjectComponents\BlockComponents\SubClasses\materialInstanceSegment.h" />
     <ClInclude Include="include\Object\ObjectComponents\BlockComponents\SubClasses\placementFilterData.h" />
     <ClInclude Include="include\Object\ObjectComponents\BlockComponents\SubClasses\Trigger.h" />
@@ -94,6 +95,7 @@
     <ClInclude Include="include\Utils\UtilFunctions.h" />
     <ClInclude Include="include\UUID_V4\endianness.h" />
     <ClInclude Include="include\UUID_V4\UUID_V4.h" />
+    <ClInclude Include="src\Object\BlockComponent\randomTicking.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Object\BlockComponent\box_breathability.cpp" />
