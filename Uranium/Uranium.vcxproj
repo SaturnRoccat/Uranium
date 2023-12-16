@@ -81,6 +81,9 @@
     <ClInclude Include="include\rapidjson\stringbuffer.h" />
     <ClInclude Include="include\rapidjson\writer.h" />
     <ClInclude Include="include\SimdJson\simdjson.h" />
+    <ClInclude Include="include\TextureUtilities\Texture\Cimg\CImg.h" />
+    <ClInclude Include="include\TextureUtilities\Texture\Cimg\CimgProxy.h" />
+    <ClInclude Include="include\TextureUtilities\Texture\Texture.h" />
     <ClInclude Include="include\Uranium.h" />
     <ClInclude Include="include\Registeries\ObjectRegistery.h" />
     <ClInclude Include="include\UraniumGlobals.h" />
@@ -109,6 +112,7 @@
     <ClCompile Include="src\Object\BlockComponent\destructible_by_mining.cpp" />
     <ClCompile Include="src\Registeries\ObjectRegistery.cpp" />
     <ClCompile Include="src\Object\Uranium.cpp" />
+    <ClCompile Include="src\TextureUtilities\Texture\Texture.cpp" />
     <ClCompile Include="src\UraniumGlobals.cpp" />
     <ClCompile Include="src\Utils\UtilFunctions.cpp" />
   </ItemGroup>
