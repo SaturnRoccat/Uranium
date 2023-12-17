@@ -19,14 +19,16 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\blocks.h" />
     <ClInclude Include="include\Object\BlockStates.h" />
+    <ClInclude Include="include\Object\Event.h" />
     <ClInclude Include="include\Object\ItemGroups.h" />
-    <ClInclude Include="include\Object\ObjectComponents\BlockComponents\box_breathability.h" />
+    <ClInclude Include="include\Object\ObjectComponents\BlockComponents\boxBreathability.h" />
     <ClInclude Include="include\Object\BlockObject.h" />
     <ClInclude Include="include\Object\CompilerObject.h" />
     <ClInclude Include="include\Logger\Logger.h" />
     <ClInclude Include="include\Object\ObjectComponents\BlockComponents\BlockComponent.h" />
-    <ClInclude Include="include\Object\ObjectComponents\BlockComponents\bone_visibility.h" />
+    <ClInclude Include="include\Object\ObjectComponents\BlockComponents\boneVisibility.h" />
     <ClInclude Include="include\Object\ObjectComponents\BlockComponents\collision_box.h" />
     <ClInclude Include="include\Object\ObjectComponents\BlockComponents\crafting_table.h" />
     <ClInclude Include="include\Object\ObjectComponents\BlockComponents\destructible_by_explosion.h" />
@@ -49,6 +51,8 @@
     <ClInclude Include="include\Object\ObjectComponents\BlockComponents\SubClasses\Trigger.h" />
     <ClInclude Include="include\Object\ObjectComponents\BlockComponents\transformation.h" />
     <ClInclude Include="include\Object\ObjectComponents\BlockComponents\unitCube.h" />
+    <ClInclude Include="include\Object\ObjectComponents\BlockEventResponse\addMobEffect.h" />
+    <ClInclude Include="include\Object\ObjectComponents\BlockEventResponse\BlockEventResponse.h" />
     <ClInclude Include="include\Object\ObjectComponents\ObjectComponents.h" />
     <ClInclude Include="include\rapidjson\allocators.h" />
     <ClInclude Include="include\rapidjson\document.h" />
@@ -98,7 +102,8 @@
     <ClInclude Include="src\Object\BlockComponent\randomTicking.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Object\BlockComponent\box_breathability.cpp" />
+    <ClCompile Include="include\Object\EventResponse.h" />
+    <ClCompile Include="src\Object\BlockComponent\boxBreathability.cpp" />
     <ClCompile Include="src\Object\BlockComponent\collision_box.cpp" />
     <ClCompile Include="src\Object\BlockComponent\crafting_table.cpp" />
     <ClCompile Include="src\Object\BlockComponent\destructible_by_explosion.cpp" />
@@ -112,7 +117,7 @@
     <ClCompile Include="src\Object\BlockComponent\selectionBox.cpp" />
     <ClCompile Include="src\Object\BlockComponent\transformation.cpp" />
     <ClCompile Include="src\Object\BlockObject.cpp" />
-    <ClCompile Include="src\Object\BlockComponent\bone_visibility.cpp" />
+    <ClCompile Include="src\Object\BlockComponent\boneVisibility.cpp" />
     <ClCompile Include="src\Object\CompilerObject.cpp" />
     <ClCompile Include="src\Logger\Logger.cpp" />
     <ClCompile Include="src\Object\BlockComponent\destructible_by_mining.cpp" />
@@ -210,7 +215,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
+      <WarningLevel>Level1</WarningLevel>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
@@ -226,7 +231,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
+      <WarningLevel>Level1</WarningLevel>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>

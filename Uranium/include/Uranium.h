@@ -13,7 +13,7 @@ namespace Uranium {
 	private:
 	private:
 	public:
-		Creation::ObjectRegistery<Creation::BlockObject*> BlockRegistery;
+		Creation::ObjectRegistry<Creation::BlockObject*> BlockRegistry;
 	public:
 		UraniumDK(const std::string& addonPrefix = "uranium_generated") {
 			SetGlobalProjectNamespace(addonPrefix);
@@ -27,20 +27,19 @@ namespace Uranium {
 			{
 				name = block->objectName;
 			}
-			BlockRegistery.registerDynamicObject(block, name);
+			BlockRegistry.registerDynamicObject(block, name);
 		}
 	public:
 #ifdef EXPOSE_DEBUG_FUNCTIONS
 		inline void DumpRegisteryToTempFolder(ConstStringRef path)
 		{
-			for (auto& block : this->BlockRegistery)
+			for (auto& block : this->BlockRegistry)
 			{
 				std::string filePath = path + block.first + ".json";
 				std::ofstream file(filePath, std::ios::out );
 
 				if (!file.is_open()) {
-					std::cout << "Failed to open file: " << filePath << std::endl;
-					std::abort();
+					Logs::Logger::Error("Could not open file: {}", filePath);
 					continue;
 				}
 

@@ -165,10 +165,10 @@
     <ClInclude Include="include\Object\ObjectComponents\BlockComponents\BlockComponent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\Object\ObjectComponents\BlockComponents\bone_visibility.h">
+    <ClInclude Include="include\Object\ObjectComponents\BlockComponents\boneVisibility.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\Object\ObjectComponents\BlockComponents\box_breathability.h">
+    <ClInclude Include="include\Object\ObjectComponents\BlockComponents\boxBreathability.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\Object\ObjectComponents\BlockComponents\collision_box.h">
@@ -246,6 +246,18 @@
     <ClInclude Include="include\Object\ObjectComponents\BlockComponents\unitCube.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\Object\EventResponse.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Object\ObjectComponents\BlockEventResponse\BlockEventResponse.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Object\ObjectComponents\BlockEventResponse\addMobEffect.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\blocks.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Object\Uranium.cpp">
@@ -266,10 +278,10 @@
     <ClCompile Include="src\Object\BlockObject.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Object\BlockComponent\bone_visibility.cpp">
+    <ClCompile Include="src\Object\BlockComponent\boneVisibility.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Object\BlockComponent\box_breathability.cpp">
+    <ClCompile Include="src\Object\BlockComponent\boxBreathability.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\UraniumGlobals.cpp">
@@ -315,6 +327,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\Object\BlockComponent\transformation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="include\Object\Event.h">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

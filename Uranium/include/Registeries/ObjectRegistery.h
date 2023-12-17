@@ -13,12 +13,12 @@ namespace Uranium
 	*/
 	namespace Creation 
 	{
-		template <typename RegisteryType>
-		class ObjectRegistery
+		template <typename RegistryType>
+		class ObjectRegistry
 		{
 		private:
 			// A place to register objects before compilation.
-			std::unordered_map<std::string, RegisteryType> m_localRegistery;
+			std::unordered_map<std::string, RegistryType> m_localRegistery;
 		public:
 
 			/**
@@ -32,7 +32,7 @@ namespace Uranium
 			void registerDynamicObject(objectType* object, std::string& name = "")
 			{
 				// Make sure that the object is a child of the registery type.
-				//static_assert(std::is_base_of<RegisteryType, objectType>::value, "The object you are trying to register is not a child of the registery type."); 
+				//static_assert(std::is_base_of<RegistryType, objectType>::value, "The object you are trying to register is not a child of the registery type."); 
 
 				// If the name is empty, then we will use the name of the object.
 				if (name == "")
@@ -53,7 +53,7 @@ namespace Uranium
 			constexpr void registerStaticObject(std::string name = "")
 			{
 				// Make sure that the object is a child of the registery type.
-				// static_assert(std::is_base_of<RegisteryType, objectType>::value, "The object you are trying to register is not a child of the registery type.");
+				// static_assert(std::is_base_of<RegistryType, objectType>::value, "The object you are trying to register is not a child of the registery type.");
 				
 				// If the name is empty, then we will use the name of the object.
 				if (name == "")
@@ -70,7 +70,7 @@ namespace Uranium
 			* @return The object that was requested.
 			* 
 			*/
-			RegisteryType* getObject(const std::string& name)
+			RegistryType* getObject(const std::string& name)
 			{
 				// Make sure that the object exists.
 				assert(m_localRegistery.find(name) != m_localRegistery.end());
@@ -79,24 +79,24 @@ namespace Uranium
 			}
 
 			// Support for the [] operator.
-			RegisteryType* operator[](const std::string& name)
+			RegistryType* operator[](const std::string& name)
 			{
 				return getObject(name);
 			}
 
 			// Itterator support.
-			typename std::unordered_map<std::string, RegisteryType>::iterator begin()
+			typename std::unordered_map<std::string, RegistryType>::iterator begin()
 			{
 				return m_localRegistery.begin();
 			}
 
 			// Itterator support.
-			typename std::unordered_map<std::string, RegisteryType>::iterator end()
+			typename std::unordered_map<std::string, RegistryType>::iterator end()
 			{
 				return m_localRegistery.end();
 			}
 
-			~ObjectRegistery()
+			~ObjectRegistry()
 			{
 				for (auto& object : m_localRegistery)
 				{

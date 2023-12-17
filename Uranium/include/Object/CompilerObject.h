@@ -23,7 +23,7 @@ namespace Uranium
 		public:
 			std::string objectName;
 			FormatVersion formatVersion = GlobalFormatVersion; 
-			Uranium::Creation::ObjectRegistery<RegisteryType*> objectRegistery; 
+			Uranium::Creation::ObjectRegistry<RegisteryType*> objectRegistery; 
 			rapidjson::Document jsonRepresentation;
 			const std::string folderName; // This is the folder that the object gets saved in on serialization
 		public:

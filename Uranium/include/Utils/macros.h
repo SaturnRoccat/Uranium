@@ -109,7 +109,7 @@
 #ifdef URANIUM_DEBUG
 #define DEBUG_PRINT(x, ...) Uranium::Logs::Logger::Info(x, __VA_ARGS__)
 #else
-	#define DEBUG_PRINT(x)
+	#define DEBUG_PRINT(xm, ...)
 #endif
 
 /**

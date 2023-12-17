@@ -6,6 +6,10 @@ namespace Uranium
 {
 	namespace Creation
 	{
+        /**
+        * A list of all the block states in the game.
+        * These were dumped from the games strings in its binary. 
+        */
 		namespace BlockStates
 		{
             static std::vector<std::string> internalBlockStatesRep = {

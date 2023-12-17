@@ -1,4 +1,4 @@
-#include <Object/ObjectComponents/BlockComponents/box_breathability.h>
+#include <Object/ObjectComponents/BlockComponents/boxBreathability.h>
 #include <Utils/macros.h>
 
 #if URANIUM_TARGET_FORMAT_VERSION <= 11941

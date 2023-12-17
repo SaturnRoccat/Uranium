@@ -1,4 +1,4 @@
-#include "Object/ObjectComponents/BlockComponents/bone_visibility.h"
+#include "Object/ObjectComponents/BlockComponents/boneVisibility.h"
 #include <Utils/macros.h>
 
 

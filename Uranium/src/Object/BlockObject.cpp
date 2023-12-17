@@ -49,7 +49,7 @@ namespace Uranium
                 rapidjson::StringBuffer buffer;
                 rapidjson::PrettyWriter<rapidjson::StringBuffer> writer(buffer);
                 doc->Accept(writer);
-                DEBUG_PRINT(buffer.GetString()); // print the json to the console
+                Logs::Logger::Info(buffer.GetString());
             )
         }
 
@@ -61,6 +61,8 @@ namespace Uranium
 
             // Loop through all of the components in the objectRegistery
             for (auto comp : this->objectRegistery) {
+                if (comp.second->skipInCompiliation)
+                    continue; // skip the component if it is marked to be skipped
                 // Call the getAsJsonData function on the component to add it to the componentsObject
                 (*(comp.second)).getAsJsonData(&componentsObject, allocator);
 			}

@@ -149,13 +149,13 @@ namespace Uranium
 				std::cout << LogLevelToColor(level);
 
 				// Format the message
-				std::string formattedLog = formatString("[{}] [{}] {}", timeString, levelString, message);
+				std::string formattedLog = formatString("[{}] [{}] {}\n", timeString, levelString, message);
 
 				// Add the message to the buffer
 				m_logBuffer->push_back(formattedLog);
 
 				// Print the message to the console
-				std::cout << formattedLog << std::endl;
+				std::cout << formattedLog;
 
 				// Reset the color of the message
 				std::cout << getColorCode(color::RESET) << "\n";
