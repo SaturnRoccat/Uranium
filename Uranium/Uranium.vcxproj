@@ -43,9 +43,12 @@
     <ClInclude Include="include\Object\ObjectComponents\BlockComponents\placementFilter.h" />
     <ClInclude Include="include\Object\ObjectComponents\BlockComponents\queuedTicking.h" />
     <ClInclude Include="include\Object\ObjectComponents\BlockComponents\randomTicking.h" />
+    <ClInclude Include="include\Object\ObjectComponents\BlockComponents\selectionBox.h" />
     <ClInclude Include="include\Object\ObjectComponents\BlockComponents\SubClasses\materialInstanceSegment.h" />
     <ClInclude Include="include\Object\ObjectComponents\BlockComponents\SubClasses\placementFilterData.h" />
     <ClInclude Include="include\Object\ObjectComponents\BlockComponents\SubClasses\Trigger.h" />
+    <ClInclude Include="include\Object\ObjectComponents\BlockComponents\transformation.h" />
+    <ClInclude Include="include\Object\ObjectComponents\BlockComponents\unitCube.h" />
     <ClInclude Include="include\Object\ObjectComponents\ObjectComponents.h" />
     <ClInclude Include="include\rapidjson\allocators.h" />
     <ClInclude Include="include\rapidjson\document.h" />
@@ -109,6 +112,8 @@
     <ClCompile Include="src\Object\BlockComponent\materialInstances.cpp" />
     <ClCompile Include="src\Object\BlockComponent\PlacementFilter.cpp" />
     <ClCompile Include="src\Object\BlockComponent\queuedTicking.cpp" />
+    <ClCompile Include="src\Object\BlockComponent\selectionBox.cpp" />
+    <ClCompile Include="src\Object\BlockComponent\transformation.cpp" />
     <ClCompile Include="src\Object\BlockObject.cpp" />
     <ClCompile Include="src\Object\BlockComponent\bone_visibility.cpp" />
     <ClCompile Include="src\Object\CompilerObject.cpp" />

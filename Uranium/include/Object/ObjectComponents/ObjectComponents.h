@@ -7,22 +7,10 @@ namespace Uranium
 {
 	namespace Creation
 	{
-
 		enum class Experiments
 		{
 			None,
 			HolidayCreatorFeatures,
-		};
-
-		enum class PlacementLocation
-		{
-			Components,
-		};
-
-		struct JsonData
-		{
-			rapidjson::Value jsonRepresentation;
-			PlacementLocation placementLocation;
 		};
 
 		/**
