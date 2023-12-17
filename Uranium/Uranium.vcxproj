@@ -53,6 +53,10 @@
     <ClInclude Include="include\Object\ObjectComponents\BlockComponents\unitCube.h" />
     <ClInclude Include="include\Object\ObjectComponents\BlockEventResponse\addMobEffect.h" />
     <ClInclude Include="include\Object\ObjectComponents\BlockEventResponse\BlockEventResponse.h" />
+    <ClInclude Include="include\Object\ObjectComponents\BlockEventResponse\damage.h" />
+    <ClInclude Include="include\Object\ObjectComponents\BlockEventResponse\die.h" />
+    <ClInclude Include="include\Object\ObjectComponents\BlockEventResponse\playSound.h" />
+    <ClInclude Include="include\Object\ObjectComponents\BlockEventResponse\play_effect.h" />
     <ClInclude Include="include\Object\ObjectComponents\ObjectComponents.h" />
     <ClInclude Include="include\rapidjson\allocators.h" />
     <ClInclude Include="include\rapidjson\document.h" />
@@ -99,6 +103,8 @@
     <ClInclude Include="include\Utils\UtilFunctions.h" />
     <ClInclude Include="include\UUID_V4\endianness.h" />
     <ClInclude Include="include\UUID_V4\UUID_V4.h" />
+    <ClInclude Include="include\Object\ObjectComponents\BlockEventResponse\removeMobEffect.h" />
+    <ClInclude Include="include\Object\ObjectComponents\BlockEventResponse\runCommand.h" />
     <ClInclude Include="src\Object\BlockComponent\randomTicking.cpp" />
   </ItemGroup>
   <ItemGroup>

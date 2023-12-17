@@ -258,6 +258,24 @@
     <ClInclude Include="include\blocks.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\Object\ObjectComponents\BlockEventResponse\damage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Object\ObjectComponents\BlockEventResponse\die.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Object\ObjectComponents\BlockEventResponse\play_effect.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Object\ObjectComponents\BlockEventResponse\playSound.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Object\ObjectComponents\BlockEventResponse\removeMobEffect.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Object\ObjectComponents\BlockEventResponse\runCommand.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Object\Uranium.cpp">
