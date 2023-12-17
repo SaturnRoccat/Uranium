@@ -472,7 +472,7 @@ enum {FALSE_WIN = 0};
 // (see methods 'CImg<T>::{load,save}_png()'.
 #ifdef cimg_use_png
 extern "C" {
-#include "png.h"
+#include "png/png.h"
 }
 #endif
 

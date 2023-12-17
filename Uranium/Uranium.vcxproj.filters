@@ -228,15 +228,6 @@
     <ClInclude Include="include\Object\ObjectComponents\BlockComponents\queuedTicking.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\TextureUtilities\Texture\Cimg\CimgProxy.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\TextureUtilities\Texture\Cimg\CImg.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\TextureUtilities\Texture\Texture.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="include\Object\ObjectComponents\BlockComponents\SubClasses\Trigger.h">
       <Filter>Header Files</Filter>
     </ClInclude>

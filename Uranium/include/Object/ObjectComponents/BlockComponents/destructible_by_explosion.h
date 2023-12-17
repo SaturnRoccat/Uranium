@@ -16,7 +16,7 @@ namespace Uranium
 				protected:
 					bool __initalized = false;
 				private:
-					bool isDestructibleByExplosion = 241; // 241 is undefined
+					bool isDestructibleByExplosion = true; // 241 is undefined
 					int resistance = -1; // -1 means undefined
 				public:
 					DestructibleByExplosion(bool isDestructibleByExplosion = true) : isDestructibleByExplosion(isDestructibleByExplosion), __initalized(true), BlockComponent("destructible_by_explosion") {}
