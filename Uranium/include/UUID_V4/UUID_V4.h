@@ -14,6 +14,7 @@ Copyright (c) 2018 Xavier "Crashoz" Launey
 #include <sstream>
 #include <cstdint>
 #include <memory>
+#pragma warning(disable: 26495)
 
 #include <emmintrin.h>
 #include <smmintrin.h>
@@ -275,3 +276,4 @@ namespace std {
         }
     };
 }
+#pragma warning(default: 26495)

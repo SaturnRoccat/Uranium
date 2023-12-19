@@ -123,6 +123,7 @@
 
 /**
 * @brief This macro is used to convert a STL string into a rapidjson string value.
+* @Deprecated Use RJ_STL_S instead.
 */
 #define RJ_STL_V(x, allocator) rapidjson::Value(x.c_str(), x.size(), allocator)
 

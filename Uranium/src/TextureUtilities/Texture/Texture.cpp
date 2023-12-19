@@ -1,5 +1,6 @@
 #include <TextureUtilities/Texture/Texture.h>
 
+#pragma warning(disable : 4267)
 namespace Uranium
 {
 	namespace Creation

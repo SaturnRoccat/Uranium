@@ -22,8 +22,8 @@ namespace Uranium
                     for (auto& stringPair : this->bonePairVisiblity)
                     {
                         // Create rapidjson::Value for the keys and values
-                        rapidjson::Value key(RJ_STL_V(stringPair.first, allocator));
-                        rapidjson::Value value(RJ_STL_V(stringPair.second, allocator));
+                        rapidjson::Value key(RJ_STL_S(stringPair.first));
+                        rapidjson::Value value(RJ_STL_S(stringPair.second));
 
                         // Add the string pair
                         boneVisibilityObject.AddMember(key, value, allocator);

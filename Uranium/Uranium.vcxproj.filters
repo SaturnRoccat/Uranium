@@ -246,9 +246,6 @@
     <ClInclude Include="include\Object\ObjectComponents\BlockComponents\unitCube.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\Object\EventResponse.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="include\Object\ObjectComponents\BlockEventResponse\BlockEventResponse.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -274,6 +271,33 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\Object\ObjectComponents\BlockEventResponse\runCommand.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Object\Event.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Object\ObjectComponents\BlockEventResponse\SetBlock.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Object\ObjectComponents\GlobalSubClasses\blockType.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Object\ObjectComponents\BlockEventResponse\setBlockAtPos.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Object\ObjectComponents\BlockEventResponse\setBlockState.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Object\ObjectComponents\BlockEventResponse\spawnLoot.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Object\ObjectComponents\BlockEventResponse\swing.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Object\ObjectComponents\BlockEventResponse\teleport.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Object\ObjectComponents\BlockEventResponse\transformItem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -347,8 +371,8 @@
     <ClCompile Include="src\Object\BlockComponent\transformation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="include\Object\Event.h">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="include\Object\EventResponse.h">
+      <Filter>Header Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

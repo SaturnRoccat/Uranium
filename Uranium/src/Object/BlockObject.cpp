@@ -16,7 +16,7 @@ namespace Uranium
             // add the format version directly without creating a separate string variable
             // Convert the version number to a c_str
             std::string version = Uranium::GlobalFormatVersion.toString();
-            doc->AddMember("format_version", RJ_STL_V(version, allocator), allocator);
+            doc->AddMember("format_version", RJ_STL_S(version), allocator);
 
             // add the minecraft::block object
             rapidjson::Value blockObject(rapidjson::kObjectType);
@@ -29,7 +29,7 @@ namespace Uranium
 
             // add the identifier directly to the descriptionObject without creating a separate object
             std::string identifier = Utils::GetNameWithNamespace(this->objectName);
-            descriptionObject.AddMember("identifier", RJ_STL_V(identifier, allocator), allocator);
+            descriptionObject.AddMember("identifier", RJ_STL_S(identifier), allocator);
 
             // add the menu_catagory object directly to the descriptionObject
             descriptionObject.AddMember("menu_catagory", rapidjson::Value(rapidjson::kObjectType), allocator);

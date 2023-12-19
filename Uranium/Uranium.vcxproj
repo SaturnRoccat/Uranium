@@ -57,6 +57,14 @@
     <ClInclude Include="include\Object\ObjectComponents\BlockEventResponse\die.h" />
     <ClInclude Include="include\Object\ObjectComponents\BlockEventResponse\playSound.h" />
     <ClInclude Include="include\Object\ObjectComponents\BlockEventResponse\play_effect.h" />
+    <ClInclude Include="include\Object\ObjectComponents\BlockEventResponse\SetBlock.h" />
+    <ClInclude Include="include\Object\ObjectComponents\BlockEventResponse\setBlockAtPos.h" />
+    <ClInclude Include="include\Object\ObjectComponents\BlockEventResponse\setBlockState.h" />
+    <ClInclude Include="include\Object\ObjectComponents\BlockEventResponse\spawnLoot.h" />
+    <ClInclude Include="include\Object\ObjectComponents\BlockEventResponse\swing.h" />
+    <ClInclude Include="include\Object\ObjectComponents\BlockEventResponse\teleport.h" />
+    <ClInclude Include="include\Object\ObjectComponents\BlockEventResponse\transformItem.h" />
+    <ClInclude Include="include\Object\ObjectComponents\GlobalSubClasses\blockType.h" />
     <ClInclude Include="include\Object\ObjectComponents\ObjectComponents.h" />
     <ClInclude Include="include\rapidjson\allocators.h" />
     <ClInclude Include="include\rapidjson\document.h" />
@@ -186,10 +194,10 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IntDir>$(SolutionDir)$(Platform)\$(Configuration)\io</IntDir>
+    <IntDir>$(SolutionDir)$(Platform)\$(Configuration)\io\$(ProjectName)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IntDir>$(SolutionDir)$(Platform)\$(Configuration)\io</IntDir>
+    <IntDir>$(SolutionDir)$(Platform)\$(Configuration)\io\$(ProjectName)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -221,11 +229,11 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <WarningLevel>Level1</WarningLevel>
+      <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
       <AdditionalIncludeDirectories>$(ProjectDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>/D _CRT_SECURE_NO_WARNINGS %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
@@ -237,13 +245,13 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <WarningLevel>Level1</WarningLevel>
+      <WarningLevel>Level3</WarningLevel>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
       <AdditionalIncludeDirectories>$(ProjectDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>/D _CRT_SECURE_NO_WARNINGS %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
