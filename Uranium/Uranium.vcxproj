@@ -114,6 +114,41 @@
     <ClInclude Include="include\Object\ObjectComponents\BlockEventResponse\removeMobEffect.h" />
     <ClInclude Include="include\Object\ObjectComponents\BlockEventResponse\runCommand.h" />
     <ClInclude Include="src\Object\BlockComponent\randomTicking.cpp" />
+    <ClInclude Include="ThirdParty\rapidjson\allocators.h" />
+    <ClInclude Include="ThirdParty\rapidjson\document.h" />
+    <ClInclude Include="ThirdParty\rapidjson\encodedstream.h" />
+    <ClInclude Include="ThirdParty\rapidjson\encodings.h" />
+    <ClInclude Include="ThirdParty\rapidjson\error\en.h" />
+    <ClInclude Include="ThirdParty\rapidjson\error\error.h" />
+    <ClInclude Include="ThirdParty\rapidjson\filereadstream.h" />
+    <ClInclude Include="ThirdParty\rapidjson\filewritestream.h" />
+    <ClInclude Include="ThirdParty\rapidjson\fwd.h" />
+    <ClInclude Include="ThirdParty\rapidjson\internal\biginteger.h" />
+    <ClInclude Include="ThirdParty\rapidjson\internal\diyfp.h" />
+    <ClInclude Include="ThirdParty\rapidjson\internal\dtoa.h" />
+    <ClInclude Include="ThirdParty\rapidjson\internal\ieee754.h" />
+    <ClInclude Include="ThirdParty\rapidjson\internal\itoa.h" />
+    <ClInclude Include="ThirdParty\rapidjson\internal\meta.h" />
+    <ClInclude Include="ThirdParty\rapidjson\internal\pow10.h" />
+    <ClInclude Include="ThirdParty\rapidjson\internal\regex.h" />
+    <ClInclude Include="ThirdParty\rapidjson\internal\stack.h" />
+    <ClInclude Include="ThirdParty\rapidjson\internal\strfunc.h" />
+    <ClInclude Include="ThirdParty\rapidjson\internal\strtod.h" />
+    <ClInclude Include="ThirdParty\rapidjson\internal\swap.h" />
+    <ClInclude Include="ThirdParty\rapidjson\istreamwrapper.h" />
+    <ClInclude Include="ThirdParty\rapidjson\memorybuffer.h" />
+    <ClInclude Include="ThirdParty\rapidjson\memorystream.h" />
+    <ClInclude Include="ThirdParty\rapidjson\msinttypes\inttypes.h" />
+    <ClInclude Include="ThirdParty\rapidjson\msinttypes\stdint.h" />
+    <ClInclude Include="ThirdParty\rapidjson\ostreamwrapper.h" />
+    <ClInclude Include="ThirdParty\rapidjson\pointer.h" />
+    <ClInclude Include="ThirdParty\rapidjson\prettywriter.h" />
+    <ClInclude Include="ThirdParty\rapidjson\rapidjson.h" />
+    <ClInclude Include="ThirdParty\rapidjson\reader.h" />
+    <ClInclude Include="ThirdParty\rapidjson\schema.h" />
+    <ClInclude Include="ThirdParty\rapidjson\stream.h" />
+    <ClInclude Include="ThirdParty\rapidjson\stringbuffer.h" />
+    <ClInclude Include="ThirdParty\rapidjson\writer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="include\Object\EventResponse.h" />
@@ -234,7 +269,7 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpplatest</LanguageStandard>
-      <AdditionalIncludeDirectories>$(ProjectDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)include;$(ProjectDir)ThirdParty;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>/D _CRT_SECURE_NO_WARNINGS %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
@@ -252,7 +287,7 @@
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpplatest</LanguageStandard>
-      <AdditionalIncludeDirectories>$(ProjectDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)include;$(ProjectDir)ThirdParty;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>/D _CRT_SECURE_NO_WARNINGS %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>

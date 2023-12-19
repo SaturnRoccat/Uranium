@@ -1,5 +1,5 @@
 #pragma once
-#include "Cimg/CimgProxy.h"
+#include <Cimg/CimgProxy.h>
 #include <vector>
 #include <string>
 
@@ -19,7 +19,7 @@ namespace Uranium
 
 			enum class DefaultState
 			{
-				_TRANSPARENT,
+				_TRANSPARENT, // have to have this underscore because of windows.h
 				SOLID,
 			};
 			class Texture
