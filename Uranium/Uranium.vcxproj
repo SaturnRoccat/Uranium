@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -22,6 +22,7 @@
     <ClInclude Include="include\blocks.h" />
     <ClInclude Include="include\Object\BlockStates.h" />
     <ClInclude Include="include\Object\Event.h" />
+    <ClInclude Include="include\Object\Events.h" />
     <ClInclude Include="include\Object\ItemGroups.h" />
     <ClInclude Include="include\Object\ObjectComponents\BlockComponents\boxBreathability.h" />
     <ClInclude Include="include\Object\BlockObject.h" />
@@ -101,6 +102,8 @@
     <ClInclude Include="include\rapidjson\stream.h" />
     <ClInclude Include="include\rapidjson\stringbuffer.h" />
     <ClInclude Include="include\rapidjson\writer.h" />
+    <ClInclude Include="include\RPUtils\GeometryUtilities\Bone.h" />
+    <ClInclude Include="include\RPUtils\GeometryUtilities\Geometry.h" />
     <ClInclude Include="include\SimdJson\simdjson.h" />
     <ClInclude Include="include\Uranium.h" />
     <ClInclude Include="include\Registeries\ObjectRegistery.h" />
@@ -172,6 +175,8 @@
     <ClCompile Include="src\Object\BlockComponent\destructible_by_mining.cpp" />
     <ClCompile Include="src\Registeries\ObjectRegistery.cpp" />
     <ClCompile Include="src\Object\Uranium.cpp" />
+    <ClCompile Include="src\RPUtilis\GeometryUtilities\Bone.cpp" />
+    <ClCompile Include="src\RPUtilis\GeometryUtilities\Geometry.cpp" />
     <ClCompile Include="src\TextureUtilities\Texture\Texture.cpp" />
     <ClCompile Include="src\UraniumGlobals.cpp" />
     <ClCompile Include="src\Utils\UtilFunctions.cpp" />

@@ -38,6 +38,48 @@ namespace Uranium
         {
             return rapidjson::StringRef(translation.c_str(), translation.size());
         };
+
+        template<int size, typename splitType = std::string>
+        std::array<splitType, size> SplitString(std::string& string, char splitChar)
+		{
+			std::array<splitType, size> returnArray;
+			std::string tempString;
+			int index = 0;
+			for (int i = 0; i < string.size(); i++)
+			{
+				if (string[i] == splitChar)
+				{
+					returnArray[index] = std::stof(tempString);
+					tempString = "";
+					index++;
+					continue;
+				}
+				tempString += string[i];
+			}
+			returnArray[index] = std::stof(tempString);
+			return std::move(returnArray);
+		}
+
+		template<typename splitType = std::string>
+        std::vector<splitType> SplitString(std::string& string, char splitChar)
+		{
+			std::vector<splitType> returnArray;
+			std::string tempString;
+			int index = 0;
+			for (int i = 0; i < string.size(); i++)
+			{
+				if (string[i] == splitChar)
+				{
+					returnArray.push_back(std::stof(tempString));
+					tempString = "";
+					index++;
+					continue;
+				}
+				tempString += string[i];
+			}
+			returnArray.push_back(std::stof(tempString));
+			return std::move(returnArray);
+		}
 	}
 }
 

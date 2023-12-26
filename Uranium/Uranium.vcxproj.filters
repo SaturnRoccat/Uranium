@@ -405,6 +405,15 @@
     <ClInclude Include="ThirdParty\rapidjson\writer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\Object\Events.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RPUtils\GeometryUtilities\Geometry.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RPUtils\GeometryUtilities\Bone.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Object\Uranium.cpp">
@@ -478,6 +487,12 @@
     </ClCompile>
     <ClCompile Include="include\Object\EventResponse.h">
       <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RPUtilis\GeometryUtilities\Bone.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RPUtilis\GeometryUtilities\Geometry.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

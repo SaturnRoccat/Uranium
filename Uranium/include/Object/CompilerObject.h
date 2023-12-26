@@ -44,5 +44,26 @@ namespace Uranium
 			virtual void getAsJsonData(rapidjson::Document* doc) = 0;
 
 		};
+
+		template <typename ComponentRegisteryType, typename EventRegisteryType>
+		class BaseObjectWithEvents : public BaseObject<ComponentRegisteryType>
+		{
+		public:
+			Uranium::Creation::ObjectRegistry<EventRegisteryType*> eventRegistery;
+		public:
+			BaseObjectWithEvents(const char* name) : BaseObject<ComponentRegisteryType>(name) {}
+			virtual void getAsJsonData(rapidjson::Document* doc) = 0;
+
+			template <typename EventType>
+			void addEvent(EventType* event) {
+				eventRegistery.registerDynamicObject(event, event->eventName);
+			}
+
+			template <typename EventType>
+			void addEvent(const char* name = "")
+			{
+				eventRegistery.registerStaticObject<EventType>(name);
+			}
+		};
 	} // namespace Creation
 } // namespace Uranium

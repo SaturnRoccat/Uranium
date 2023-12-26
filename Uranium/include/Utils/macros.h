@@ -160,6 +160,20 @@ for (auto& i : x) {\
 	name.PushBack(ConvertionCall(i), allocator);\
 }
 
+#define RJ_STL_V_A_Q(x, nameInJson, document, operatorCall)\
+rapidjson::Value S#__LINE__ (rapidjson::kArrayType);\
+for (auto& i : x) {\
+	S#__LINE__.PushBack(i, allocator);\
+} document operatorCall AddMember(nameInJson, S#__LINE__ , allocator);
+
+
+#define RJ_STL_V_A_Q_EX(x, nameInJson, document, ConvertionCall)\
+rapidjson::Value S#__LINE__ (rapidjson::kArrayType);\
+for (auto& i : x) {\
+	S#__LINE__.PushBack(ConvertionCall(i), allocator);\
+} document.AddMember(nameInJson, S#__LINE__ , allocator);
+
+
 /**
 * This is an internal macro used for quick creation of components. That have a single type.
 */
